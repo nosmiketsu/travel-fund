@@ -14,6 +14,35 @@
         }
         p {
             font-weight: bold;
+        }p.expenses {
+            font-size: 14px!Important;
+            text-align: center;
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: .3rem;
+        }
+        
+        span.airline {
+            font-size: 0.5rem;
+            color: white;
+            font-weight: 800;
+            background: red;
+            padding: .3rem;
+            border-radius: 1rem;
+            animation: bounce 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-30px);
+          }
+          60% {
+            transform: translateY(-15px);
+          }
         }
         h1 {
             text-align: center;
@@ -79,22 +108,30 @@
         <div class="person">
             <h2>Kim</h2>
             <p>Current Savings: Php <span id="savings1" class="savings">0</span></p>
-            <p>Less Expenses: Php <span id="funds1" class="funds">0</span></p>
+            <p class="expenses">Less Expenses: Php <span id="funds1" class="funds">0</span>
+            <br>
+            <span class="airline">Airline Ticket only</span></p>
         </div>
         <div class="person">
             <h2>Bev</h2>
             <p>Current Savings: Php <span id="savings2" class="savings">0</span></p>
-            <p>Less Expenses: Php <span id="funds2" class="funds">0</span></p>
+            <p class="expenses">Less Expenses: Php <span id="funds2" class="funds">0</span>
+            <br>
+            <span class="airline">Airline Ticket only</span></p>
         </div>
         <div class="person">
             <h2>Met</h2>
             <p>Current Savings: Php <span id="savings3" class="savings">0</span></p>
-            <p>Less Expenses: Php <span id="funds3" class="funds">0</span></p>
+            <p class="expenses">Less Expenses: Php <span id="funds3" class="funds">0</span>
+            <br>
+            <span class="airline">Airline Ticket only</span></p>
         </div>
         <div class="person">
             <h2>Yestine</h2>
             <p>Current Savings: Php <span id="savings4" class="savings">0</span></p>
-            <p>Less Expenses: Php <span id="funds4" class="funds">0</span></p>
+            <p class="expenses">Less Expenses: Php <span id="funds4" class="funds">0</span>
+            <br>
+            <span class="airline">Airline Ticket only</span></p>
         </div>
     </div>
 
