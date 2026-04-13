@@ -79,19 +79,22 @@
         <div class="person">
             <h2>Kim</h2>
             <p>Current Savings: Php <span id="savings1" class="savings">0</span></p>
-            <p>Current Savings: Php <span id="savings1" class="funds">0</span></p>
+            <p>Less Expenses: Php <span id="funds1" class="funds">0</span></p>
         </div>
         <div class="person">
             <h2>Bev</h2>
             <p>Current Savings: Php <span id="savings2" class="savings">0</span></p>
+            <p>Less Expenses: Php <span id="funds2" class="funds">0</span></p>
         </div>
         <div class="person">
             <h2>Met</h2>
             <p>Current Savings: Php <span id="savings3" class="savings">0</span></p>
+            <p>Less Expenses: Php <span id="funds3" class="funds">0</span></p>
         </div>
         <div class="person">
             <h2>Yestine</h2>
             <p>Current Savings: Php <span id="savings4" class="savings">0</span></p>
+            <p>Less Expenses: Php <span id="funds4" class="funds">0</span></p>
         </div>
     </div>
 
@@ -116,29 +119,7 @@ function loadTotals() {
             for (let i = 1; i <= 4; i++) {
                 document.getElementById("savings" + i).textContent =
                     data.totals[i - 1] ?? 0;
-            }
-        })
-        .catch(error => {
-            console.error("Load error:", error);
-        });
-}
-
-function loadTotals() {
-    fetch(SCRIPT_URL + "?t=" + new Date().getTime()) // prevent cache
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response not OK");
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("GET response:", data);
-
-            if (!data.totals) {
-                throw new Error("Invalid response format");
-            }
-
-            for (let i = 2; i <= 4; i++) {
+                
                 document.getElementById("funds" + i).textContent =
                     data.totals[i - 1] ?? 0;
             }
@@ -146,7 +127,7 @@ function loadTotals() {
         .catch(error => {
             console.error("Load error:", error);
         });
-}        
+}   
 
 // Load on page start
 window.addEventListener("DOMContentLoaded", loadTotals);
