@@ -112,7 +112,7 @@ function loadTotals() {
         .then(data => {
             console.log("GET response:", data);
 
-            if (!data.totals) {
+            if (!data.savings || !data.expenses) {
                 throw new Error("Invalid response format");
             }
 
